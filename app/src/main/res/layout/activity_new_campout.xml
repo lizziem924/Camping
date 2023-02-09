@@ -21,7 +21,7 @@
       android:layout_height="wrap_content"
       android:layout_below="@+id/question1"
       android:padding="8dp"
-      android:layout_bottomMargin="8dp"
+      android:layout_marginBottom="8dp"
       android:inputType="text"
       />
 
@@ -31,7 +31,7 @@
       android:layout_height="wrap_content"
       android:layout_below="@+id/answer1"
       android:padding="8dp"
-      android:text="Enter in a name for your campout:"
+      android:text="How far away is the camp?"
       />
 
   <EditText
@@ -40,8 +40,65 @@
       android:layout_height="wrap_content"
       android:layout_below="@+id/question2"
       android:padding="8dp"
-      android:layout_bottomMargin="8dp"
+      android:layout_marginBottom="8dp"
       android:inputType="text"
       />
+
+  <TextView
+      android:id="@+id/question3"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_below="@+id/answer2"
+      android:padding="8dp"
+      android:text="How many miles per gallon does the car get?"
+      />
+
+  <EditText
+      android:id="@+id/answer3"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_below="@+id/question3"
+      android:padding="8dp"
+      android:layout_marginBottom="8dp"
+      android:inputType="text"
+      />
+
+  <TextView
+      android:id="@+id/question4"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_below="@+id/answer3"
+      android:padding="8dp"
+      android:text="What is the average price of gas in the area?"
+      />
+
+  <EditText
+      android:id="@+id/answer4"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_below="@+id/question4"
+      android:padding="8dp"
+      android:layout_marginBottom="8dp"
+      android:inputType="text"
+      />
+
+  <Button
+      android:id="@+id/back_button"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:text="back"
+      android:layout_alignParentBottom="true"
+      android:onClick="goBack"
+    />
+
+  <Button
+      android:id="@+id/next_button"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:text="next"
+      android:layout_alignParentBottom="true"
+      android:layout_alignParentRight="true"
+      android:onClick="goNext"
+    />
 
   </RelativeLayout>

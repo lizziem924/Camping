@@ -6,16 +6,16 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
-public class NewCampoutActivity extends AppCompatActivity {
+public class NewCampoutActivity2 extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_new_campout);
+        setContentView(R.layout.activity_new_campout2);
     }
 
     public void goBack(View view) {
-        Intent backIntent = new Intent(NewCampoutActivity.this, MainActivity.class);
+        Intent backIntent = new Intent(NewCampoutActivity2.this, NewCampoutActivity.class);
         startActivity(backIntent);
     }
 }
