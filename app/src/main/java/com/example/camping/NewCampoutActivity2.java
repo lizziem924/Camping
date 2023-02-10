@@ -18,4 +18,11 @@ public class NewCampoutActivity2 extends AppCompatActivity {
         Intent backIntent = new Intent(NewCampoutActivity2.this, NewCampoutActivity.class);
         startActivity(backIntent);
     }
+
+    public void saveCampout(View view) {
+        //need to save the data into variables
+        //go back to main screen
+        Intent saveIntent = new Intent(NewCampoutActivity2.this, MainActivity.class);
+        startActivity(saveIntent);
+    }
 }

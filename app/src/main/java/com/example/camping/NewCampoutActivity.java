@@ -18,4 +18,9 @@ public class NewCampoutActivity extends AppCompatActivity {
         Intent backIntent = new Intent(NewCampoutActivity.this, MainActivity.class);
         startActivity(backIntent);
     }
+
+    public void goNext(View view) {
+        Intent nextIntent = new Intent(NewCampoutActivity.this, NewCampoutActivity2.class);
+        startActivity(nextIntent);
+    }
 }

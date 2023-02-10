@@ -6,6 +6,30 @@
     android:layout_height="match_parent"
     tools:context=".NewCampoutActivity2">
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center_horizontal"
+        >
+
+    <Button
+        android:id="@+id/addNewFoodGroup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="add new food group"
+        />
+
+        <ListView
+            android:id="@+id/foodGroupList"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="50dp"
+            android:orientation="vertical"
+            >
+            </ListView>
+
+    </LinearLayout>
 
 
     <Button
@@ -15,6 +39,16 @@
         android:text="back"
         android:layout_alignParentBottom="true"
         android:onClick="goBack"
+        />
+
+    <Button
+        android:id="@+id/finish_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="done"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:onClick="saveCampout"
         />
 
 </RelativeLayout>

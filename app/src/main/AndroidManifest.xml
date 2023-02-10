@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Camping">
         <activity
+            android:name=".NewCampoutActivity3"
+            android:exported="true" />
+        <activity
             android:name=".NewCampoutActivity2"
             android:exported="true" />
         <activity

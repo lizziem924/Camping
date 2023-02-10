@@ -31,7 +31,7 @@
       android:layout_height="wrap_content"
       android:layout_below="@+id/answer1"
       android:padding="8dp"
-      android:text="How far away is the camp?"
+      android:text="How far away is the camp? (in miles)"
       />
 
   <EditText

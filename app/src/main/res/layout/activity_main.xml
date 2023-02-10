@@ -4,17 +4,36 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+    >
 
-    <ListView
-        android:id="@+id/campout_list"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="-62dp"
+        android:layout_height="match_parent"
         android:orientation="vertical"
+        android:gravity="center_horizontal"
         >
 
-    </ListView>
+        <TextView
+            android:id="@+id/title_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="My Campouts"
+            android:textSize="24dp"
+            android:textStyle="bold"
+            />
+
+        <ListView
+            android:id="@+id/campout_list"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="60dp"
+            android:orientation="vertical"
+            >
+
+        </ListView>
+
+    </LinearLayout>
 
     <Button
         android:id="@+id/add_new"
@@ -26,6 +45,5 @@
         android:layout_alignParentBottom="true"
         android:onClick="addNew"
         />
-
 
 </RelativeLayout>
