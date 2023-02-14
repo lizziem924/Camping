@@ -6,28 +6,24 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
-public class NewCampoutActivity2 extends AppCompatActivity {
+public class NewCampoutActivity4 extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_new_campout2);
+        setContentView(R.layout.activity_new_campout4);
     }
 
     public void goBack(View view) {
-        Intent backIntent = new Intent(NewCampoutActivity2.this, NewCampoutActivity.class);
+        Intent backIntent = new Intent(NewCampoutActivity4.this, NewCampoutActivity3.class);
         startActivity(backIntent);
     }
 
     public void saveCampout(View view) {
         //need to save the data into variables
+        //onPause()
         //go back to main screen
-        Intent saveIntent = new Intent(NewCampoutActivity2.this, MainActivity.class);
+        Intent saveIntent = new Intent(NewCampoutActivity4.this, NewCampoutActivity3.class);
         startActivity(saveIntent);
-    }
-
-    public void addNewFoodGroup(View view) {
-        Intent i = new Intent(NewCampoutActivity2.this, NewCampoutActivity3.class);
-        startActivity(i);
     }
 }
