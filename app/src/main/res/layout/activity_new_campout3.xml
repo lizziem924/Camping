@@ -25,41 +25,64 @@
         <ListView
             android:id="@+id/participantsList"
             android:layout_width="match_parent"
-            android:layout_height="603dp"
+            android:layout_height="633dp"
             android:layout_marginBottom="50dp"
             android:orientation="vertical">
 
         </ListView>
 
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:orientation="horizontal"
+        >
+
+        <Button
+            android:id="@+id/back_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="back"
+            android:onClick="goBack"
+            />
+
+        <Space
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_weight="1"
+            >
+
+        </Space>
+
         <Button
             android:id="@+id/add_participant"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="add participant"
             android:onClick="addNewParticipant"
+            android:text="add participant"
+            />
+
+        <Space
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_weight="1"
+            >
+
+        </Space>
+
+        <Button
+            android:id="@+id/finish_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="done"
+            android:onClick="saveCampout"
             />
 
     </LinearLayout>
 
-    <Button
-        android:id="@+id/back_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="back"
-        android:layout_alignParentBottom="true"
-        android:onClick="goBack"
-        />
-
-
-    <Button
-        android:id="@+id/finish_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="done"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentEnd="true"
-        android:onClick="saveCampout"
-        />
 
 
 </RelativeLayout>
