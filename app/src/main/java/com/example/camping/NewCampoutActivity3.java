@@ -30,7 +30,7 @@ public class NewCampoutActivity3 extends AppCompatActivity {
 
     public void addNewParticipant(View view) {
         //go to new screen that has a slot for a name and a checkbox for adult/youth
-        //save each as a participant item
+        //save each as a participant item and add each participant to it's own food group list and the participant list
         Intent i = new Intent(NewCampoutActivity3.this, NewCampoutActivity4.class);
         startActivity(i);
     }
