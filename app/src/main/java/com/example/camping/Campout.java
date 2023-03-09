@@ -38,4 +38,12 @@ public class Campout {
     public void setMileageFromCamp(int mileCamp) {mileageFromCamp = mileCamp;}
     public void setMilesPerGallon(int mpg) {milesPerGallon = mpg;}
     public void setGasPrice(double gas) {gasPrice = gas;}
+
+    //need a method to add a participant to the list
+    public void addParticipant(Participant p) {
+        participantList.add(p);
+    }
+    public void removeParticipant(Participant p) {
+        participantList.remove(p);
+    }
 }

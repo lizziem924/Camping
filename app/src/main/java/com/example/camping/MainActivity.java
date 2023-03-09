@@ -6,6 +6,9 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class MainActivity extends AppCompatActivity {
 
     @Override
@@ -18,4 +21,7 @@ public class MainActivity extends AppCompatActivity {
         Intent addNewIntent = new Intent(MainActivity.this, NewCampoutActivity.class);
         startActivity(addNewIntent);
     }
+
+    List<Campout> campoutList = new ArrayList<>();
+
 }

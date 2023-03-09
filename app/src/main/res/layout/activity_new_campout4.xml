@@ -41,7 +41,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/enterName"
         android:padding="8dp"
-        android:text="Is this participant a youth or an adult?"
+        android:text="Is this participant an adult? (check if true)"
         />
 
     <LinearLayout
@@ -52,20 +52,14 @@
         >
 
         <CheckBox
-            android:id="@+id/youth_checkbox"
+            android:id="@+id/age_checkbox"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="youth"
+            android:text="participant is 18+"
             android:layout_marginLeft="16dp"
             android:paddingRight="16dp"
             />
 
-        <CheckBox
-            android:id="@+id/adult_checkbox"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="adult"
-            />
 
     </LinearLayout>
 
@@ -85,7 +79,7 @@
         android:text="done"
         android:layout_alignParentBottom="true"
         android:layout_alignParentEnd="true"
-        android:onClick="saveCampout"
+        android:onClick="save"
         />
 
 </RelativeLayout>

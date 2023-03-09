@@ -4,6 +4,7 @@ public class Participant {
     //attributes
     String name;
     boolean youthOrAdult;
+    //bool is true if adult and false if youth
 
     //constructor
     public Participant(String n, boolean ya) {

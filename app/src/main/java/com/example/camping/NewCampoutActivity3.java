@@ -6,6 +6,9 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class NewCampoutActivity3 extends AppCompatActivity {
 
     @Override
@@ -14,16 +17,28 @@ public class NewCampoutActivity3 extends AppCompatActivity {
         setContentView(R.layout.activity_new_campout3);
     }
 
+    List<Participant> participants = new ArrayList<>();
+
     public void goBack(View view) {
         Intent backIntent = new Intent(NewCampoutActivity3.this, NewCampoutActivity2.class);
         startActivity(backIntent);
     }
 
-    public void saveCampout(View view) {
+    public void saveParticipants(View view) {
         //need to save the data into variables
+
         //onPause()
         //go back to main screen
         Intent saveIntent = new Intent(NewCampoutActivity3.this, NewCampoutActivity2.class);
+
+        Bundle extras = saveIntent.getExtras();
+        if (extras != null) {
+            String name = (String) extras.get("nameKey");
+            Boolean isAdult = (Boolean) extras.get("ageKey");
+            Participant p = new Participant(name, isAdult);
+            participants.add(p);
+        }
+
         startActivity(saveIntent);
     }
     //only difference between these two is that the back button does not save, the done button will save the participants and then go back
