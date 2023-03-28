@@ -13,6 +13,7 @@ import java.util.List;
 
 public class NewCampoutActivity extends AppCompatActivity {
 
+    ArrayList<Campout> campoutList = ListContainer.getCampoutList();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

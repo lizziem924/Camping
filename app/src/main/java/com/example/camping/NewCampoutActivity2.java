@@ -12,6 +12,8 @@ import java.util.List;
 
 public class NewCampoutActivity2 extends AppCompatActivity {
 
+    ArrayList<Campout> campoutList = ListContainer.getCampoutList();
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -41,7 +43,7 @@ public class NewCampoutActivity2 extends AppCompatActivity {
         //miles per gallon
         EditText mpgField = findViewById(R.id.answer4);
         String mpgValue = mpgField.getText().toString(); //save mpg to a string
-        int mpg = Integer.parseInt(campsiteFeeValue); //convert to an int
+        int mpg = Integer.parseInt(mpgValue); //convert to an int
         //price of gas
         EditText gasPriceField = findViewById(R.id.answer5);
         String gasPriceValue = gasPriceField.getText().toString(); //save campsite fee to a string
@@ -52,7 +54,7 @@ public class NewCampoutActivity2 extends AppCompatActivity {
         List<Participant> participants = new ArrayList<>();
         //create new campout item
         Campout campout = new Campout(name, participants, campsiteFee, campDistance, mpg, gasPrice);
-        //need to pass the campout along throughout all activities (using shared preferences)
+        campoutList.add(campout);
 
         //go back to main screen
         Intent saveIntent = new Intent(NewCampoutActivity2.this, MainActivity.class);

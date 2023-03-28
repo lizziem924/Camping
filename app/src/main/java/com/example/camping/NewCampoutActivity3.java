@@ -11,6 +11,8 @@ import java.util.List;
 
 public class NewCampoutActivity3 extends AppCompatActivity {
 
+    ArrayList<Campout> campoutList = ListContainer.getCampoutList();
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -25,12 +27,10 @@ public class NewCampoutActivity3 extends AppCompatActivity {
     }
 
     public void saveParticipants(View view) {
-        //need to save the data into variables
 
-        //onPause()
-        //go back to main screen
         Intent saveIntent = new Intent(NewCampoutActivity3.this, NewCampoutActivity2.class);
 
+        //get the data from participant screen, create a participant, and add it to the list
         Bundle extras = saveIntent.getExtras();
         if (extras != null) {
             String name = (String) extras.get("nameKey");
@@ -38,6 +38,10 @@ public class NewCampoutActivity3 extends AppCompatActivity {
             Participant p = new Participant(name, isAdult);
             participants.add(p);
         }
+
+        //use the last element in the list, because that's the index of each new campout
+        //set the participant list once it's determined
+        campoutList.get(campoutList.size()-1).setParticipantList(participants);
 
         startActivity(saveIntent);
     }
