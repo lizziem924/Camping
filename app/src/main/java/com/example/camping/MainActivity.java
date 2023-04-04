@@ -24,4 +24,8 @@ public class MainActivity extends AppCompatActivity {
     }
 
     ArrayList<Campout> campoutList = ListContainer.getCampoutList();
+    //empty the participant list because this is a new campout
+    ArrayList<Participant> participantArrayList = ListContainer.getParticipantArrayList();
+
+
 }

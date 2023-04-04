@@ -17,12 +17,12 @@
         android:id="@+id/addNewFoodGroup"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="add new food group"
-        android:onClick="addNewFoodGroup"
+        android:text="add participant"
+        android:onClick="addNewParticipant"
         />
 
         <ListView
-            android:id="@+id/foodGroupList"
+            android:id="@+id/participantList"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="50dp"

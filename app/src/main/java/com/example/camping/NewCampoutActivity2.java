@@ -27,6 +27,7 @@ public class NewCampoutActivity2 extends AppCompatActivity {
 
     public void saveCampout(View view) {
         //need to save the data into variables
+        Intent saveIntent = new Intent(NewCampoutActivity2.this, MainActivity.class);
 
         //save the data and move on
         //name
@@ -49,21 +50,18 @@ public class NewCampoutActivity2 extends AppCompatActivity {
         String gasPriceValue = gasPriceField.getText().toString(); //save campsite fee to a string
         double gasPrice = Double.parseDouble(gasPriceValue); //convert to an int
 
-        //put it into a new campout
-        //pass in an empty participant list as a placeholder until I can do that later
         List<Participant> participants = new ArrayList<>();
+
         //create new campout item
         Campout campout = new Campout(name, participants, campsiteFee, campDistance, mpg, gasPrice);
         campoutList.add(campout);
 
         //go back to main screen
-        Intent saveIntent = new Intent(NewCampoutActivity2.this, MainActivity.class);
         startActivity(saveIntent);
     }
 
-    public void addNewFoodGroup(View view) {
+    public void addNewParticipant(View view) {
         Intent i = new Intent(NewCampoutActivity2.this, NewCampoutActivity3.class);
-        
         startActivity(i);
     }
 }

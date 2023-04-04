@@ -2,9 +2,13 @@ package com.example.camping;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.CheckBox;
+import android.widget.EditText;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -12,6 +16,7 @@ import java.util.List;
 public class NewCampoutActivity3 extends AppCompatActivity {
 
     ArrayList<Campout> campoutList = ListContainer.getCampoutList();
+    List<Participant> participants = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,38 +24,39 @@ public class NewCampoutActivity3 extends AppCompatActivity {
         setContentView(R.layout.activity_new_campout3);
     }
 
-    List<Participant> participants = new ArrayList<>();
+    public static final String MyPREFERENCES = "MyPrefs";
+    SharedPreferences sp;
 
     public void goBack(View view) {
         Intent backIntent = new Intent(NewCampoutActivity3.this, NewCampoutActivity2.class);
         startActivity(backIntent);
     }
 
-    public void saveParticipants(View view) {
+    public void save(View view) {
+        //need to save the data into variables
+        EditText nameField = findViewById(R.id.enterName);
+        String name = nameField.getText().toString(); //save name to a string
+        CheckBox age = (CheckBox) findViewById(R.id.age_checkbox);
+        boolean isAdult = age.isChecked(); //true = adult, false = youth
+        //take the data and put it into a participant
+        Participant p = new Participant(name, isAdult);
+        participants.add(p);
 
+        //go back to screen 2
         Intent saveIntent = new Intent(NewCampoutActivity3.this, NewCampoutActivity2.class);
+        /* shared prefs the participant info so it can be used in screen 3
+        String Name = "nameKey";
+        String Age = "ageKey";
+        sp = getSharedPreferences(MyPREFERENCES, Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = sp.edit();
+        editor.putString(Name, name);
+        editor.putBoolean(Age, isAdult);
+        editor.commit();
 
-        //get the data from participant screen, create a participant, and add it to the list
-        Bundle extras = saveIntent.getExtras();
-        if (extras != null) {
-            String name = (String) extras.get("nameKey");
-            Boolean isAdult = (Boolean) extras.get("ageKey");
-            Participant p = new Participant(name, isAdult);
-            participants.add(p);
-        }
-
-        //use the last element in the list, because that's the index of each new campout
-        //set the participant list once it's determined
-        campoutList.get(campoutList.size()-1).setParticipantList(participants);
+        saveIntent.putExtra(Name, name);
+        saveIntent.putExtra(Age, isAdult);
+         */
 
         startActivity(saveIntent);
-    }
-    //only difference between these two is that the back button does not save, the done button will save the participants and then go back
-
-    public void addNewParticipant(View view) {
-        //go to new screen that has a slot for a name and a checkbox for adult/youth
-        //save each as a participant item and add each participant to it's own food group list and the participant list
-        Intent i = new Intent(NewCampoutActivity3.this, NewCampoutActivity4.class);
-        startActivity(i);
     }
 }
