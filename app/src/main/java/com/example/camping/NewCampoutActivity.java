@@ -30,9 +30,7 @@ public class NewCampoutActivity extends AppCompatActivity {
 
     public void goNext(View view) {
         Intent nextIntent = new Intent(NewCampoutActivity.this, NewCampoutActivity2.class);
-
-        SharedPreferences sp = getSharedPreferences("sharedPref", MODE_PRIVATE);
-        //then go on once all the data is saved
+        //save the data in the next screen
         startActivity(nextIntent);
     }
 }

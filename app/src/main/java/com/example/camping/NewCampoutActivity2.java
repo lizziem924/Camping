@@ -13,6 +13,7 @@ import java.util.List;
 public class NewCampoutActivity2 extends AppCompatActivity {
 
     ArrayList<Campout> campoutList = ListContainer.getCampoutList();
+    ArrayList<Participant> participantArrayList = ListContainer.getParticipantArrayList();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,10 +51,9 @@ public class NewCampoutActivity2 extends AppCompatActivity {
         String gasPriceValue = gasPriceField.getText().toString(); //save campsite fee to a string
         double gasPrice = Double.parseDouble(gasPriceValue); //convert to an int
 
-        List<Participant> participants = new ArrayList<>();
 
         //create new campout item
-        Campout campout = new Campout(name, participants, campsiteFee, campDistance, mpg, gasPrice);
+        Campout campout = new Campout(name, participantArrayList, campsiteFee, campDistance, mpg, gasPrice);
         campoutList.add(campout);
 
         //go back to main screen

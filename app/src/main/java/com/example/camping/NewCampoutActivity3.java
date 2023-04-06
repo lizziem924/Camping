@@ -16,7 +16,7 @@ import java.util.List;
 public class NewCampoutActivity3 extends AppCompatActivity {
 
     ArrayList<Campout> campoutList = ListContainer.getCampoutList();
-    List<Participant> participants = new ArrayList<>();
+    ArrayList<Participant> participantArrayList = ListContainer.getParticipantArrayList();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,7 +40,7 @@ public class NewCampoutActivity3 extends AppCompatActivity {
         boolean isAdult = age.isChecked(); //true = adult, false = youth
         //take the data and put it into a participant
         Participant p = new Participant(name, isAdult);
-        participants.add(p);
+        participantArrayList.add(p);
 
         //go back to screen 2
         Intent saveIntent = new Intent(NewCampoutActivity3.this, NewCampoutActivity2.class);
